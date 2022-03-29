@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4a06a77a.css",
+    "main.js": "/static/js/main.98cb1b94.js",
+    "static/media/bike.svg": "/static/media/bike.5e78eca4607872f29316ac789acf4a46.svg",
+    "static/media/shimano.png": "/static/media/shimano.0ab4559e17f4103d1258.png",
+    "static/media/silverback.png": "/static/media/silverback.81b9a63dff8370565b4c.png",
+    "static/media/mavic.png": "/static/media/mavic.ab52ddc1427141463f13.png",
+    "static/media/santa.png": "/static/media/santa.a319c3e0ce1f49dede01.png",
+    "static/media/fox.png": "/static/media/fox.e041c7fbbbf152bdf43e.png",
+    "static/media/trek.png": "/static/media/trek.76a356000539d2e24a66.png",
+    "static/media/map.svg": "/static/media/map.dfb4fcdd6db1202f3b46ddadd1b273e8.svg",
+    "static/media/bikerIcon.svg": "/static/media/bikerIcon.852e466927ba78528ef07953b871d65f.svg",
+    "static/media/goldenCup.svg": "/static/media/goldenCup.7451a2a6e87c56cb739e88c04abe0c0e.svg",
+    "static/media/logo.svg": "/static/media/logo.2aaba8ac432718298268d6b69a366236.svg",
+    "static/media/cart.svg": "/static/media/cart.4abf3f95b7f10105cbe32f82cc89d248.svg",
+    "static/media/start.svg": "/static/media/start.2db41a2985332d2ee2ae7b2202412439.svg",
+    "static/media/box.svg": "/static/media/box.a9c09c88a4e0754f416b7e4c76a43f07.svg",
+    "static/media/freeShipping.svg": "/static/media/freeShipping.0d07f3e818bf5adc07121f0b776d9a27.svg",
+    "static/media/github.svg": "/static/media/github.ca36a53919f002606610a68b0d6e7b46.svg",
+    "index.html": "/index.html",
+    "static/media/arrowDown.svg": "/static/media/arrowDown.84ce913768200a0b2c15de970d4f1f62.svg",
+    "main.4a06a77a.css.map": "/static/css/main.4a06a77a.css.map",
+    "main.98cb1b94.js.map": "/static/js/main.98cb1b94.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a06a77a.css",
+    "static/js/main.98cb1b94.js"
+  ]
+}
