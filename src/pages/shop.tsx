@@ -3,7 +3,6 @@ import {
   Divider,
   Flex,
   Image,
-  Select,
   Text,
   Button,
   Center,
@@ -44,16 +43,6 @@ const ShopPage = (): JSX.Element => {
               The purpose of lorem ipsum is to create a natural looking
             </Text>
           </Flex>
-          <Select
-            display={["none", "none", "block", "block", "block"]}
-            w="230px"
-            h="30px"
-            fontSize="15px"
-            placeholder="Select option"
-          >
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </Select>
         </Flex>
         <Divider mt="8" mb="8" borderColor="#E3E3E3" />
         <Flex
@@ -108,7 +97,7 @@ const ShopPage = (): JSX.Element => {
                         {product.desc}
                       </Text>
                     </Flex>
-                    <Text>$ {product.price}</Text>
+                    <Text>NGN {product.price}</Text>
                   </Flex>
                 </Link>
                 <Center>

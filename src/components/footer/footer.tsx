@@ -7,59 +7,11 @@ import logo from "../../svg/logo.svg";
 import github from "../../svg/github.svg";
 
 const FooterComp = (): JSX.Element => {
-  const items = [
-    {
-      title: "Company",
-      one: "Terms of service",
-      two: "Privacy policy",
-      three: "Help center",
-      four: "Contact",
-      five: "About us",
-      id: 1,
-    },
-    {
-      title: "Policy",
-      one: "Privacy Policy",
-      two: "Return & Refund Policy",
-      three: "Order & Delivery Policy",
-      four: "Cancellation Policy",
-      five: "Terms & Conditions",
-      id: 2,
-    },
-    {
-      title: "FAQ",
-      one: "Manage Deliveries",
-      two: "Account",
-      three: "Payments",
-      four: "Returns",
-      five: "Orders",
-      id: 3,
-    },
-    {
-      title: "Support",
-      one: "Contact us",
-      two: "Online Chat",
-      three: "Whatsapp",
-      four: "Telegram",
-      five: "Ticketing",
-      id: 4,
-    },
-    {
-      title: "About",
-      one: "About us",
-      two: "Careers",
-      three: "In Press",
-      four: "Blog",
-      five: "Jobs",
-      id: 5,
-    },
-  ];
-
   return (
     <Flex
       w="100%"
-      minH="450px"
-      h="auto"
+      minH="50px"
+      h="12em"
       bg="#f9fafd"
       position="relative"
       mt="200px"
@@ -101,6 +53,7 @@ const FooterComp = (): JSX.Element => {
               mt={["8px", "17px", "0px", "0px", "0px"]}
             >
               <Input
+                color="white"
                 _placeholder={{ color: "#f8fafd", fontWeight: "200" }}
                 placeholder="Enter your email!"
                 rounded="55px"
@@ -122,35 +75,7 @@ const FooterComp = (): JSX.Element => {
           alignItems="flex-start"
           flexDir={["column", "column", "row", "row", "row"]}
         >
-          {items.map((item) => {
-            return (
-              <Flex
-                key={item.id}
-                mt="8"
-                ml={["20", "10", "0", "0", "0"]}
-                flexDir="column"
-              >
-                <Text fontSize="24px" fontWeight="700">
-                  {item.title}
-                </Text>
-                <Text fontWeight="500" mt="3" color="#7E7E7E" fontSize="15px">
-                  {item.one}
-                </Text>
-                <Text fontWeight="500" mt="3" color="#7E7E7E" fontSize="15px">
-                  {item.two}
-                </Text>
-                <Text fontWeight="500" mt="3" color="#7E7E7E" fontSize="15px">
-                  {item.three}
-                </Text>
-                <Text fontWeight="500" mt="3" color="#7E7E7E" fontSize="15px">
-                  {item.four}
-                </Text>
-                <Text fontWeight="500" mt="3" color="#7E7E7E" fontSize="15px">
-                  {item.five}
-                </Text>
-              </Flex>
-            );
-          })}
+          
         </Flex>
         <Flex
           position={["static", "static", "absolute", "absolute", "absolute"]}

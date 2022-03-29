@@ -21,7 +21,7 @@ type AddTodCartProps = (product: ProductPorps) => void;
 
 type ActionDispatchProps = {
     action: string;
-    state: ProductPorps
+    state: ProductProps
 }
 
 type actionProps = {

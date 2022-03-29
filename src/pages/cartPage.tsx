@@ -1,10 +1,14 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Container, Divider, Flex, Text } from "@chakra-ui/layout";
+import { Input } from "@chakra-ui/react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../common/card";
 import Layout from "../layout/layout";
 import { useCart, useCartAction } from "../providers/cartProvider";
+import { PaystackButton } from "react-paystack"
+
 
 const CartPage = (): JSX.Element => {
   const { cart } = useCart();
@@ -18,6 +22,7 @@ const CartPage = (): JSX.Element => {
     dispatch({ type: "DEC_PRODUCT", payload: cartItem });
   };
 
+  
   return (
     <Layout>
       <Container minH="70vh" maxW="container.xl">
@@ -110,7 +115,7 @@ const CartPage = (): JSX.Element => {
                         alignItems="flex-end"
                         justifyContent="space-between"
                       >
-                        <Text>$ {c.price * c.qty}</Text>
+                        <Text>N {c.price * c.qty}</Text>
                         <Flex alignItems="center">
                           <Flex
                             justifyContent="space-between"
@@ -191,7 +196,7 @@ const CartPage = (): JSX.Element => {
             )}
           </Flex>
 
-          <CartSummery />
+          <CartSummary />
         </Flex>
       </Container>
     </Layout>
@@ -200,9 +205,27 @@ const CartPage = (): JSX.Element => {
 
 export default CartPage;
 
-export function CartSummery() {
+export function CartSummary () {
   const { cart, total } = useCart();
-
+  
+  const [ email, setEmail ] = useState( "" )
+  const publicKey = "pk_test_159060f8d2b4cbe0478f3a1175efb455c0e6b13d"
+ 
+  let amount = Number(total+'00')
+  
+   const paymentProps = {
+    email,
+    amount,
+    publicKey,
+    text: "Checkout",
+    onSuccess: () => {
+      setEmail( "" )
+      cart.length = 0;
+      window.location.reload();
+    }
+   }
+  
+  
   const totalPrice = cart.length
     ? cart.reduce((acc: any, curr: any) => acc + curr.qty * curr.price, 0)
     : 0;
@@ -218,41 +241,56 @@ export function CartSummery() {
       bg="#f8fafd"
       rounded="14px"
       w={["full", "full", "400px", "400px", "400px"]}
-      h="260px"
+      h="300px"
       shadow="sm"
     >
       <Text fontSize="21px" fontWeight="500">
-        order summery
+        Order Summary
       </Text>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
       <Flex w="full" justifyContent="space-between" color="#4B4B4B">
-        <Text>original price</Text>
-        <Text>$ {totalPrice}</Text>
+        <Text>Original price</Text>
+        <Text>N {totalPrice}</Text>
       </Flex>
       <Flex mt="3" w="full" justifyContent="space-between" color="#4B4B4B">
-        <Text>cart discount</Text>
-        <Text>$ {totalPrice - total}</Text>
+        <Text>Cart Discount</Text>
+        <Text>N {totalPrice - total}</Text>
       </Flex>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
       <Flex w="full" mb="3" justifyContent="space-between" color="#4B4B4B">
-        <Text>total</Text>
-        <Text>$ {total}</Text>
+        <Text>Total</Text>
+        <Text>N {total}</Text>
       </Flex>
+      <Input
+        color="white"
+        _placeholder={{ color: "#f8fafd", fontWeight: "200" }}
+        placeholder="Enter your email"
+        rounded="55px"
+        bg="#608AF4"
+        border="none"
+        marginBottom="2em"
+
+        type="text"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+       />
       <Button
         fontSize="14px"
         border="1px solid"
         borderColor="#191919"
+        _hover={{ bg: "#f3f3f3" }}
         rounded="8"
         _focus={{}}
-        _hover={{}}
         h="30px"
         w="90%"
         variant="outline"
         position="absolute"
         bottom="3"
       >
-        Checkout
+        <PaystackButton className="Button" {...paymentProps} />
       </Button>
     </Card>
+    
   );
 }

@@ -43,7 +43,7 @@ const BikeDetail = (history: any): JSX.Element => {
             </Text>
             <Image mt="80px" w="180px" src={startIcon} />
             <Text mt="2" mb="5">
-              $ {state.price}
+              NGN {state.price}
             </Text>
             <Button
               fontSize="14px"

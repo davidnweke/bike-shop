@@ -18,7 +18,7 @@ const HomeBody = (): JSX.Element => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
-  const componyItems = [
+  const companyItems = [
     { name: "silverback", id: 1 },
     { name: "surly", id: 2 },
     { name: "shimano", id: 3 },
@@ -70,7 +70,7 @@ const HomeBody = (): JSX.Element => {
         flexWrap="wrap"
         mt="10"
       >
-        {componyItems.map((item) => {
+        {companyItems.map((item) => {
           return (
             <Text
               key={item.id}
@@ -143,7 +143,7 @@ const HomeBody = (): JSX.Element => {
                     </Text>
                   </Flex>
                 </Link>
-                <Text>{product.price}</Text>
+                <Text>NGN {product.price}</Text>
               </Flex>
               <Center>
                 <Button

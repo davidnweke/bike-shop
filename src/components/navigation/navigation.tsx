@@ -3,7 +3,6 @@ import { Image } from "@chakra-ui/image";
 import { Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import logo from "../../svg/logo.svg";
-import search from "../../svg/search.svg";
 import cartSvg from "../../svg/cart.svg";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../../providers/cartProvider";
@@ -15,6 +14,7 @@ const NavigationComp = (): JSX.Element => {
     { name: "Home", link: "/", id: 1 },
     { name: "Shop", link: "/shop", id: 3 },
     { name: "Cart", link: "/cart", id: 2 },
+    
   ];
 
   return (
@@ -58,13 +58,6 @@ const NavigationComp = (): JSX.Element => {
       </Flex>
 
       <Flex>
-        <Image
-          cursor="pointer"
-          mr="3"
-          w="26px"
-          src={search}
-          display={["none", "none", "block", "block", "block"]}
-        />
         <Link to="/cart">
           <Flex position="relative">
             <Image cursor="pointer" w="26px" src={cartSvg} />
@@ -102,7 +95,7 @@ const NavigationComp = (): JSX.Element => {
           _active={{}}
           display={["none", "none", "block", "block", "block"]}
         >
-          Sign in/Sign up
+          
         </Button>
       </Flex>
     </Flex>
