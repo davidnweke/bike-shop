@@ -115,7 +115,7 @@ const CartPage = (): JSX.Element => {
                         alignItems="flex-end"
                         justifyContent="space-between"
                       >
-                        <Text>N {c.price * c.qty}</Text>
+                        <Text>NGN {(c.price * c.qty).toLocaleString("en-US")}</Text>
                         <Flex alignItems="center">
                           <Flex
                             justifyContent="space-between"
@@ -250,16 +250,16 @@ export function CartSummary () {
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
       <Flex w="full" justifyContent="space-between" color="#4B4B4B">
         <Text>Original price</Text>
-        <Text>N {totalPrice}</Text>
+        <Text>NGN {totalPrice.toLocaleString("en-US")}</Text>
       </Flex>
       <Flex mt="3" w="full" justifyContent="space-between" color="#4B4B4B">
         <Text>Cart Discount</Text>
-        <Text>N {totalPrice - total}</Text>
+        <Text>NGN {(totalPrice - total).toLocaleString("en-US")}</Text>
       </Flex>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
       <Flex w="full" mb="3" justifyContent="space-between" color="#4B4B4B">
         <Text>Total</Text>
-        <Text>N {total}</Text>
+        <Text>NGN {total.toLocaleString("en-US")}</Text>
       </Flex>
       <Input
         color="white"
