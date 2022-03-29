@@ -209,7 +209,7 @@ export function CartSummary () {
   const { cart, total } = useCart();
   
   const [ email, setEmail ] = useState( "" )
-  const publicKey = "pk_test_159060f8d2b4cbe0478f3a1175efb455c0e6b13d"
+  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY
  
   let amount = Number( total + '00' )
   

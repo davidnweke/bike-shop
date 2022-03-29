@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import CartProvider from "./providers/cartProvider";
 import routes from "./routes/routes";
 
